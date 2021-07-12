@@ -28,16 +28,17 @@
                     </div>
                 </div>
                 {% for post in object_list %}
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="blog__item">
-                        <div class="blog__item__pic set-bg" data-setbg="{{ post.image.url }}"></div>
-                        <div class="blog__item__text">
-                            <span><img src="{% static 'img/icon/calendar.png' %}" alt="">{{ post.created_at|date: 'd N Y'  }} 21 February 2020</span>
-                            <h5>{{ post.title }}</h5>
-                            <a href="{% url 'blog:detail' pk=post.pk %}">Read More</a>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="blog__item">
+                            <div class="blog__item__pic set-bg" data-setbg="{{ post.image.url }}"></div>
+                            <div class="blog__item__text">
+                                <span><img src="{% static 'img/icon/calendar.png' %}"
+                                           alt="">{{ post.created_at|date:'d N Y' }}</span>
+                                <h5>{{ post.title }}</h5>
+                                <a href="{% url 'blog:detail' pk=post.pk %}">Read More</a>
+                            </div>
                         </div>
                     </div>
-                </div>
                 {% endfor %}
             </div>
         </div>
