@@ -10,7 +10,7 @@
             <span>EN <i class="arrow_carrot-down"></i></span>
             <ul>
                 <li>RU</li>
-                <li>RU</li>
+                <li>UZ</li>
             </ul>
         </div>
     </div>
@@ -67,7 +67,7 @@
                         <li {% if request.path == '/' %}class="active" {% endif %} ><a href="{% url 'pages:home' %}">Home</a></li>
                         <li><a href="./shop.html">Products</a></li>
                         <li {% if request.path == '/blog/' %}class="active" {% endif %}><a href="{% url 'blog:list' %}">Blog</a></li>
-                        <li><a href="./blog.html">About</a></li>
+                        <li{% if request.path == '/about/' %} class="active" {% endif %}><a href="{% url 'pages:about' %}">About</a></li>
                         <li {% if request.path == '/contact/' %}class="active" {% endif %} ><a href="{% url 'pages:contact' %}">Contact </a></li>
                     </ul>
                 </nav>
