@@ -6,8 +6,9 @@ from blog.forms import CommentModelForm
 from blog.models import PostModel
 
 
-class BlogTemplateView(ListView):
+class BlogListView(ListView):
     template_name = 'blog.html'
+    paginate_by = 2
 
     def get_queryset(self):
         qs = PostModel.objects.order_by('-pk')

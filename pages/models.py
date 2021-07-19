@@ -15,3 +15,17 @@ class ContactModel(models.Model):
     class Meta:
         verbose_name = _('contact')
         verbose_name_plural = _('contacts')
+
+
+class BannerModel(models.Model):
+    collection = models.CharField(max_length=32, verbose_name=_('collection'))
+    title = models.CharField(max_length=64, verbose_name=_('title'))
+    description = models.TextField(verbose_name=_('description'))
+    image = models.ImageField(upload_to='banners', verbose_name='image')
+    is_active = models.BooleanField(default=False, verbose_name=_('is active'))
+
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('created at'))
+
+    class Meta:
+        verbose_name = _('banner')
+        verbose_name_plural = _('banners')
