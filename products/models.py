@@ -58,11 +58,12 @@ class ProductModel(models.Model):
             return (100 - self.discount) / 100 * self.price
         return self.price
 
-    # def is_new(self):
-    #     return (timezone.now() - self.created_at).days <= 3
-    #
-    # def get_related(self):
-    #     return self.category.products.order_by('-pk').exclude(pk=self.pk)[:4]
+    def is_new(self):
+        # returns the current time
+        return (timezone.now() - self.created_at).days <= 3  # identifies if the day is over 3 or not. Returns Boolean
+
+    def get_related(self):
+        return self.category.products.order_by('-pk').exclude(pk=self.pk)[:4]
 
     def __str__(self):
         return self.title
